@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="product_info_add" inherit_id="website_sale.product" name="product info add">
+    
+<xpath expr="//a[@id='add_to_cart']" position="after">
+        
+<hr/>
+        
+<span>
+            
+<strong>HSN/SAC Information:</strong>
+        
+</span>
+        
+<br/>
+        
+<p>Code:
+            
+<span t-field="product.x_studio_informacin_adicional"/>
+        
+</p>
+        
+<p>Description:
+            
+<span t-field="product.x_studio_informacin_adicional"/>
+        
+</p>
+    
+</xpath>
+</template>
+</odoo>
