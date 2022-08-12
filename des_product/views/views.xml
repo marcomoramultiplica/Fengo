@@ -10,7 +10,7 @@
         
 <p>Beneficios del producto:
             
-<span t-field="product.	x_studio_beneficios_del_producto"/>
+<span t-field="product.x_studio_beneficios_del_producto"/>
         
 </p>
         
