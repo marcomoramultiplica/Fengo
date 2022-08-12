@@ -6,7 +6,7 @@
     'description': 'Para mas info',
     'author': 'Multiplicalite',
     'data': [
-        'views/view.xml',
+        'views/views.xml',
     ],
     'installable': True,
     'auto_install': False,
