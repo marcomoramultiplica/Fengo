@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="inherit_recommended_products" name="Productos Alternativos" inherit_id="website_sale.recommended_products">
+        <xpath expr="//div[hasclass('row','mt16')]" position="replace">
+            <div class="row mt16" t-if="alternative_products">
+                <t t-foreach="alternative_products" t-as="alt_product">
+                    <div class="card border-0 col-12 col-md-4 col-lg-3 mt32">
+                        <t t-set="combination_info" t-value="alt_product._get_combination_info()" />
+                        <t t-set="combination_info" t-value="alt_product._get_combination_info()" />
+                        <t t-set="product_variant" t-value="alt_product.env['product.product'].browse(combination_info['product_id'])" />
+
+                        <div class="d-flex flex-column align-items-center">
+                            <a class="o_carousel_product_img_link o_dynamic_product_hovered" t-att-href="alt_product.website_url">
+                                <div class="o_carousel_product_card_img_top card-img-top" t-field="alt_product.image_128" t-options="{'widget': 'image'}" />
+                            </a>
+                        </div>
+
+                        <div class="card-body border-bottom d-flex flex-column align-items-center mb-4">
+                            <div class="o_carousel_product_card_body d-flex flex-wrap flex-column justify-content-end h-100">
+                                <a t-att-href="alt_product.website_url" class="o_carousel_product_img_link text-decoration-none">
+                                    <div class="h6 card-title mt-4" t-field="alt_product.name" />
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
