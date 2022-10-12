@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="sendcloud_service_point_inherit_website_sale_delivery" inherit_id="website_sale_delivery.payment_delivery_methods">
+        <xpath expr="//label[@t-field='delivery.name']" position="after">
+            <t t-if="delivery.delivery_type == 'sendcloud_ts' and delivery.is_enable_service_point">
+                <span class="ml4">
+                        <a href="#" id="open_sendcloud_service_point">
+                            (Select Service Point)
+                        </a>
+                </span>
+            </t>
+        </xpath>
+    </template>
+</odoo>
