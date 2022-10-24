@@ -9,7 +9,7 @@
 <br/>
         
 <p>Principios activos:
-            
+
 <span t-field="product.x_studio_ingredientes"/>
         
 </p>
