@@ -3,33 +3,25 @@
 <template id="product_info_add" inherit_id="website_sale.product" name="product info add">
     
 <xpath expr="//a[@id='add_to_cart']" position="after">
-        
-<hr/>
-             
-<br/>
-        
-<p>Principios activos:
 
+<hr/>
+
+<br/>
+
+<p>Principios activos:
 <span t-field="product.x_studio_ingredientes"/>
-        
 </p>
         
 <p>Modo de empleo:
-            
 <span t-field="product.x_studio_modo_empleo"/>
-        
 </p>
 
 <p>Tipo de piel:
-            
 <span t-field="product.x_studio_tipo_de_piel"/>
-        
 </p>
 
 <p>Marca:
-            
 <span t-field="product.x_studio_marca"/>
-        
 </p>
     
 </xpath>
