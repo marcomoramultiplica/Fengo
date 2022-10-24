@@ -8,21 +8,27 @@
              
 <br/>
         
-<p>Beneficios del producto:
-            
-<span t-field="product.x_studio_beneficios_del_producto"/>
-        
-</p>
-        
-<p>Ingredientes:
+<p>Principios activos:
             
 <span t-field="product.x_studio_ingredientes"/>
         
 </p>
-
-<p>Uso/Aplicación:
+        
+<p>Modo de empleo:
             
-<span t-field="product.x_studio_usoaplicacin"/>
+<span t-field="product.x_studio_modo_empleo"/>
+        
+</p>
+
+<p>Tipo de piel:
+            
+<span t-field="product.x_studio_tipo_de_piel"/>
+        
+</p>
+
+<p>Marca:
+            
+<span t-field="product.x_studio_marca"/>
         
 </p>
     
