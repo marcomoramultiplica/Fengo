@@ -8,7 +8,7 @@
 
 <br/>
 
-<p>Información:
+<p>
 <span t-field="product.x_studio_informacin_adicional_producto"/>
 </p>
     
