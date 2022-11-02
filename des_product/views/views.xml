@@ -8,20 +8,8 @@
 
 <br/>
 
-<p>Principios activos:
-<span t-field="product.x_studio_ingredientes"/>
-</p>
-        
-<p>Modo de empleo:
-<span t-field="product.x_studio_modo_empleo"/>
-</p>
-
-<p>Tipo de piel:
-<span t-field="product.x_studio_tipo_de_piel"/>
-</p>
-
-<p>Marca:
-<span t-field="product.x_studio_marca"/>
+<p>Información:
+<span t-field="x_studio_informacin_adicional_producto"/>
 </p>
     
 </xpath>
