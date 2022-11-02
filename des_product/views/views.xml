@@ -9,7 +9,7 @@
 <br/>
 
 <p>Información:
-<span t-field="x_studio_informacin_adicional_producto"/>
+<span t-field="product.x_studio_informacin_adicional_producto"/>
 </p>
     
 </xpath>
