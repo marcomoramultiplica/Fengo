@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="payment_acquirer_redsys" model="payment.acquirer">
+        <field name="name">Redsys Merchant</field>
+        <field name="provider">redsys</field>
+        <field name="redirect_form_view_id" ref="redirect_form"/>
+        <field name="support_authorization">False</field>
+        <field name="support_fees_computation">False</field>
+        <field name="support_refund"></field>
+        <field name="support_tokenization">False</field>
+        <field name="redsys_merchant_code">999008881</field>
+        <field name="redsys_merchant_key">sq7HjrUOBfKmC576ILgskD5srU870gJ7</field>
+        <field name="redsys_merchant_terminal">001</field>
+        <field name="description"><![CDATA[
+            <p>A Redsys payment gateway to accept online payments.</p>]]></field>
+        <field name="image_128" type="base64" file="payment_redsys_merchant/static/src/img/Redsys-payment-gateway.jpg"/>
+    </record>
+
+    <record id="payment_method_redsys" model="account.payment.method">
+        <field name="name">Redsys</field>
+        <field name="code">redsys</field>
+        <field name="payment_type">inbound</field>
+    </record>
+</odoo>
