@@ -17,7 +17,7 @@ class ResUsersInherit(models.Model):
         headers = {"Content-Type": "application/json"}
         response={}
         if(req_type == "1"):
-            response = requests.post(url, data=json.dumps(json_data), headers=headers)
+            response = requests.get(url, headers=headers)
             logger.info("SIGHORE" + "> Response: " + str(response.json()))
 
 
