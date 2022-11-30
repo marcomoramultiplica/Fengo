@@ -17,5 +17,5 @@ class SendCloudServiceCountries(models.Model):
     _description = "SendCloud Services Countries"
 
     country_id = fields.Many2one("res.country", string="Country")
-    price = fields.Float("Price", readonly=1)
+    price = fields.Float("Price", readonly=0)
     service_id = fields.Many2one("sendcloud.service", string="Service", ondelete="cascade")
