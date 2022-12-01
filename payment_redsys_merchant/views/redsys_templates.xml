@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Copyright (c) 2020-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+    <!-- See LICENSE file for full copyright and licensing details. -->
+    <template id="redirect_form">
+        <form t-att-action="api_url" method="post">
+            <input type="hidden" name="Ds_SignatureVersion" t-att-value="Ds_SignatureVersion"/>
+            <input type="hidden" name="Ds_MerchantParameters" t-att-value="Ds_MerchantParameters"/>
+            <input type="hidden" name="Ds_Signature" t-att-value="Ds_Signature"/>
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+        </form>
+    </template>
+</odoo>
