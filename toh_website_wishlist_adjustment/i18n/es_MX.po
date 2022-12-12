@@ -1,0 +1,36 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* toh_website_wishlist_adjustment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20221104\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-05 23:31+0000\n"
+"PO-Revision-Date: 2022-12-05 23:31+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: toh_website_wishlist_adjustment
+#: model_terms:ir.ui.view,arch_db:toh_website_wishlist_adjustment.inherit_product_wishlist
+msgid "<i class=\"fa fa-trash-o\"/> Remove"
+msgstr "<i class=\"fa fa-trash-o\"/> Eliminar"
+
+
+#. module: toh_website_wishlist_adjustment
+#: model_terms:ir.ui.view,arch_db:toh_website_wishlist_adjustment.inherit_product_wishlist
+msgid ""
+"<span class=\"d-none d-sm-inline\">Add <span class=\"d-none d-sm-inline\">to Cart</span></span>\n"
+"                                                    <span class=\"d-inline d-sm-none\"><i class=\"fa fa-shopping-cart\"/></span>"
+msgstr ""
+"<span class=\"d-none d-sm-inline\">Agregar <span class=\"d-none d-sm-inline\">al carrito</span></span>\n"
+"                                                    <span class=\"d-inline d-sm-none\"><i class=\"fa fa-shopping-cart\"/></span>"
+
+#. module: toh_website_wishlist_adjustment
+#: model_terms:ir.ui.view,arch_db:toh_website_wishlist_adjustment.inherit_product_wishlist
+msgid "Product image"
+msgstr "Imágen del producto"

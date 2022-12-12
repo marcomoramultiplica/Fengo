@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="inherit_product_wishlist" inherit_id="website_sale_wishlist.product_wishlist">
+        <xpath expr="//table[@id='o_comparelist_table']" position="replace">
+            <table class="border -table -table-bordered table-striped table-hover text-center w-100 mt16 mb16 table-comparator " style="table-layout:auto" id="o_comparelist_table">
+                <div class="row no-gutters mx-auto">
+                    <t t-foreach="wishes" t-as="wish">
+                        <t t-set="combination_info" t-value="wish.product_id._get_combination_info_variant()"/>
+                        <!-- Contenedor padre -->
+                        <tr class="row border-bottom mx-auto py-3" t-att-data-wish-id='wish.id' t-att-data-product-id='wish.product_id.id'
+                            t-att-data-product-tracking-info="json.dumps(request.env['product.template'].get_google_analytics_data(combination_info))">
+                            
+                            <!-- Contenedor Imagen -->
+                            <td class="col-3 col-lg-2 mx-auto">
+                                <div class='d-flex flex-column align-items-center mb-2 -td-img -align-middle'>
+                                    <a t-att-href="wish.product_id.website_url">
+                                        <img t-attf-src="/web/image/product.product/#{wish.product_id.id}/image_128" class="img img-fluid" style="margin:auto;" alt="Product image"/>
+                                    </a>
+                                </div>
+                            </td>
+
+                            <!-- Contendedor Contenido -->
+                            <td class="col-9 col-lg-10 row mx-auto p-0">
+                                <div class='col-12 col-lg-10 text-left pl-0'>
+                                    <div class="col-12">
+                                        <strong><a t-att-href="wish.product_id.website_url"><t t-esc="wish.product_id.display_name" /></a></strong>
+                                    </div>
+                                    <div class="col-12">
+                                        <small class='d-none d-md-block'><p t-field="wish.product_id.description_sale" class="text-muted"/></small>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-2 text-left text-lg-right">
+                                    <t t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"/>
+                                    <small t-if="wish.product_id.base_unit_price" class="cart_product_base_unit_price d-block text-muted" groups="website_sale.group_show_uom_price">
+                                        <t t-call='website_sale.base_unit_price'><t t-set='product' t-value='wish.product_id' /></t>
+                                    </small>
+                                </div>
+                                <div class='col-12 d-flex flex-wrap justify-content-sm-end justify-content-between align-items-center text-center td-wish-btn -align-middle'>
+                                    <input name="product_id" t-att-value="wish.product_id.id" type="hidden"/>
+                                    <button type="button" class="btn btn-light btn-sm mt-2 mr-2 mt-sm-0 o_wish_rm no-decoration"><i class='fa fa-trash-o'></i> Remove</button>
+                                    <button type="button" role="button" class="btn btn-secondary btn-sm mt-2 mt-sm-0 -btn-block o_wish_add -mb4" >
+                                        <span class="d-none d-sm-inline">Add <span class='d-none d-sm-inline'>to Cart</span></span>
+                                        <span class="d-inline d-sm-none"><i class="fa fa-shopping-cart"></i></span>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </t>
+                </div>
+            </table>
+        </xpath>
+    </template>
+
+</odoo>
