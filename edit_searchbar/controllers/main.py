@@ -52,7 +52,7 @@ class CustomWebsite(Website):
             - 'fuzzy_search': search term used instead of requested search
         """
         #Define search_type as "products_only"
-        search_type = "products_only"
+        #search_type = "products_only"
         order = self._get_search_order(order)
         options = options or {}
         return options
