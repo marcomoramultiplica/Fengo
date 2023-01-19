@@ -57,7 +57,7 @@ class CustomWebsite(Website):
         options = options or {}
         if 'display_currency' not in options:
             options['display_currency'] = request.website.get_current_pricelist().currency_id
-
+        options['displayExtraLink'] = ''
         results_count, search_results, fuzzy_term = request.website._search_with_fuzzy(search_type, term, limit, order, options)
         if not results_count:
             return {
