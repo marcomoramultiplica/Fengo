@@ -1,7 +1,30 @@
-from odoo import http
-from odoo.http import request
+import base64
+import datetime
+import json
+import os
+import logging
+import re
+import requests
+import werkzeug.urls
+import werkzeug.utils
+import werkzeug.wrappers
+
+from itertools import islice
+from lxml import etree
 from textwrap import shorten
+from xml.etree import ElementTree as ET
+
 from odoo.addons.website.controllers.main import Website
+
+import odoo
+
+from odoo import http, models, fields, _
+from odoo.http import request
+from odoo.osv import expression
+from odoo.tools import OrderedSet, escape_psql, html_escape as escape
+from odoo.addons.http_routing.models.ir_http import slug, slugify, _guess_mimetype
+from odoo.addons.portal.controllers.portal import pager as portal_pager
+from odoo.addons.portal.controllers.web import Home
 
 class CustomWebsite(Website):  
     @http.route('/website/snippet/autocomplete', type='json', auth='public', website=True)
