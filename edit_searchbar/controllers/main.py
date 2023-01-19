@@ -55,6 +55,9 @@ class CustomWebsite(Website):
         search_type = "products_only"
         order = self._get_search_order(order)
         options = options or {}
+        if 'display_currency' not in options:
+            options['display_currency'] = request.website.get_current_pricelist().currency_id
+            
         results_count, search_results, fuzzy_term = request.website._search_with_fuzzy(search_type, term, limit, order, options)
         if not results_count:
             return {
