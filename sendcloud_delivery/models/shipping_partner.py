@@ -72,7 +72,7 @@ class ShippingPartner(models.Model):
                     error_msg = response.get('error', {}).get('message', False)
                 raise UserError(_("SendCloud: %s" % error_msg or req.text))
             except:
-                raise UserError(_("SendCloud: %s" % req.text))
+                raise UserError(_("SendCloud: %s" % e))
         return response
 
     def get_sendcloud_carriers(self):
