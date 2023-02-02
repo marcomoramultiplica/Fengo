@@ -56,6 +56,7 @@ class ShippingPartner(models.Model):
             req = requests.request(method, api_url, auth=HTTPBasicAuth(self.sendcloud_public_key, self.sendcloud_secret_key),
                                    headers=headers, params=params,
                                    data=data)
+            print(req)
             if req.status_code != 410:
                 req.raise_for_status()
             if isinstance(req.content, bytes):
