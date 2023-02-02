@@ -6,9 +6,7 @@ from odoo import models, fields, api, _
 from requests.auth import HTTPBasicAuth
 from odoo.modules.module import get_module_resource
 from odoo.exceptions import UserError, ValidationError
-import logging
 
-_logger = logging.getLogger(__name__)
 
 
 class ShippingPartner(models.Model):
@@ -59,7 +57,6 @@ class ShippingPartner(models.Model):
             req = requests.request(method, api_url, auth=HTTPBasicAuth(self.sendcloud_public_key, self.sendcloud_secret_key),
                                    headers=headers, params=params,
                                    data=data)
-            _logger.debug('ERROR: %s' % req)
             if req.status_code != 410:
                 req.raise_for_status()
             if isinstance(req.content, bytes):
@@ -75,7 +72,7 @@ class ShippingPartner(models.Model):
                     error_msg = response.get('error', {}).get('message', False)
                 raise UserError(_("SendCloud: %s" % error_msg or req.text))
             except:
-                raise UserError(_("SendCloud: %s" % e))
+                raise UserError(_("SendCloud: %s" % req))
         return response
 
     def get_sendcloud_carriers(self):
